@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
+import { UploadPage } from '../upload/upload';
 
 // Angular firebase
 import { AngularFireDatabase } from '@angular/fire/database';
@@ -11,8 +12,14 @@ import { Observable } from 'rxjs/Observable';
 })
 export class HomePage {
   bocatas:Observable<any[]>
-  constructor(public navCtrl: NavController, afDB: AngularFireDatabase) {
-    this.bocatas = afDB.list('bocatas').valueChanges();
+
+  constructor(public navCtrl: NavController, private afDB: AngularFireDatabase, private modalCtrl: ModalController) {
+    this.bocatas = afDB.list('bocata').valueChanges();
   }
 
+  private showModal(){
+    let modal = this.modalCtrl.create(UploadPage);
+    modal.present();
+  }
+  
 }

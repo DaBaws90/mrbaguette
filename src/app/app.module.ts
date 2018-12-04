@@ -14,6 +14,12 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/da
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 export const firebaseConfig = {
+  apiKey: "AIzaSyCTngyqq3YUza13IpKAekk45dUJt2ioxjY",
+  authDomain: "mr-baguette.firebaseapp.com",
+  databaseURL: "https://mr-baguette.firebaseio.com",
+  projectId: "mr-baguette",
+  storageBucket: "mr-baguette.appspot.com",
+  messagingSenderId: "687249478305"
 
 };
 

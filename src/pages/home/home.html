@@ -1,14 +1,37 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  <ion-navbar color="dark">
+    <ion-title text-center>
+      Mr. Baguette
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="showModal()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-card *ngFor="let bocata of bocatas | async">
+    <img [src]="bocata.img" />
+    <ion-card-content>
+      <ion-card-title>
+        {{ bocata.nombre }}
+      </ion-card-title>
+      <p>
+        {{ bocata.descripcion }}
+      </p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col text-right>
+        <button ion-button clear small color="primary" icon-left>
+          <ion-icon name="share-alt"></ion-icon>
+          Compartir
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
 </ion-content>
